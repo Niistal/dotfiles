@@ -25,7 +25,7 @@ Cada carpeta es un paquete stow que se enlaza a `$HOME`:
 ## Instalación en máquina nueva
 
 ```bash
-git clone <tu-repo> ~/dotfiles
+git clone https://github.com/Niistal/dotfiles.git ~/dotfiles
 ~/dotfiles/install.sh
 ```
 
