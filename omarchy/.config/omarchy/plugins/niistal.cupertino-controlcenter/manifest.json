@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "niistal.cupertino-controlcenter",
+  "name": "Cupertino Control Center",
+  "version": "1.0.0",
+  "author": "Niistal",
+  "description": "macOS Control Center with DevSecOps panel",
+  "kinds": ["panel"],
+  "keepLoaded": true,
+  "entryPoints": {
+    "panel": "ControlCenter.qml"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "niistal.window-controls",
+  "name": "Cupertino Window Controls",
+  "version": "1.0.0",
+  "author": "Niistal",
+  "description": "macOS traffic light buttons (close, minimize, fullscreen) for active window",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Window Controls",
+    "description": "macOS traffic light buttons (Close, Minimize, Fullscreen)",
+    "category": "Window Manager",
+    "allowMultiple": false
+  }
+}

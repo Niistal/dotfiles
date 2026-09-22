@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "niistal.controlcenter-button",
+  "name": "Control Center Button",
+  "version": "1.0.0",
+  "author": "Niistal",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Control Center",
+    "description": "Toggle macOS Control Center",
+    "category": "Utilities",
+    "allowMultiple": false
+  }
+}

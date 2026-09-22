@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "niistal.cupertino-dock",
+  "name": "Cupertino Dock",
+  "version": "1.0.0",
+  "author": "Niistal",
+  "description": "macOS-inspired animated bottom dock with magnification",
+  "kinds": ["overlay"],
+  "keepLoaded": true,
+  "entryPoints": {
+    "overlay": "Dock.qml"
+  }
+}

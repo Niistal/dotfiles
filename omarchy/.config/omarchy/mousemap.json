@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "scopeToDevice": true,
+  "devices": {
+    "1038:184c:steelseries-steelseries-rival-3": {
+      "label": "",
+      "learned": [],
+      "layout": {},
+      "bindings": {},
+      "dpi": {
+        "enabled": true,
+        "base": 1598,
+        "active": 3,
+        "presets": [
+          {
+            "name": "Sniper",
+            "dpi": 200
+          },
+          {
+            "name": "Precise",
+            "dpi": 200
+          },
+          {
+            "name": "Full",
+            "dpi": 200
+          },
+          {
+            "name": "1600 DPI",
+            "dpi": 1600
+          }
+        ]
+      }
+    }
+  }
+}

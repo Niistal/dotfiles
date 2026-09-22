@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "niistal.search-button",
+  "name": "Spotlight Button",
+  "version": "1.0.0",
+  "author": "Niistal",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Spotlight",
+    "description": "Trigger Spotlight Search",
+    "category": "Utilities",
+    "allowMultiple": false
+  }
+}

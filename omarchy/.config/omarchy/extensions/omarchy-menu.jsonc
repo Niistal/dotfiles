@@ -1,0 +1,49 @@
+{
+  // omaplug-menu-start
+  "apps.omaplug": {"icon": "󱓖", "label": "Omaplug", "description": "Manage Omarchy plugins with Omaplug", "aliases": ["omaplug", "plugins"], "action": "omarchy-shell shell toggle omaplug"},
+  // omaplug-menu-end
+
+  // Niistal Cupertino Spotlight & Menu Extensions
+  "about": {
+    "icon": "",
+    "label": "About This Mac (Niistal Cupertino)",
+    "description": "System specifications, hardware and kernel info",
+    "action": "omarchy-launch-or-focus-tui 'fastfetch; read -n 1 -s -r -p \"Press any key to close...\"'"
+  },
+  "settings": {
+    "icon": "󰒓",
+    "label": "System Settings",
+    "description": "Configure displays, audio, appearance, network",
+    "action": "omarchy-menu toggle setup"
+  },
+  "search_files": {
+    "icon": "",
+    "label": "Finder / Files",
+    "description": "Browse home directory and documents",
+    "action": "uwsm-app -- nautilus ~"
+  },
+  "search_projects": {
+    "icon": "",
+    "label": "Developer Projects",
+    "description": "Open ~/projects",
+    "action": "uwsm-app -- nautilus ~/projects"
+  },
+  "search_web": {
+    "icon": "󰖟",
+    "label": "Search Web with Browser",
+    "description": "Open web browser",
+    "action": "omarchy-launch-browser"
+  },
+  "search_terminal": {
+    "icon": "",
+    "label": "Terminal",
+    "description": "Open foot terminal",
+    "action": "xdg-terminal-exec"
+  },
+  "search_activity": {
+    "icon": "󰄛",
+    "label": "Activity Monitor",
+    "description": "Inspect CPU, memory and process usage",
+    "action": "omarchy-launch-or-focus-tui btop"
+  }
+}

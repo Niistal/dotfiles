@@ -1,0 +1,11 @@
+# locks / backups de editores
+*.bak
+*.bak.*
+*~
+.omaplug-menu.lock
+# estados y cachés que no deben versionarse
+**/__pycache__/
+**/.DS_Store
+packages/mise-list.txt
+# nvim: no versionar datos de lazy (sí el lock)
+nvim/.config/nvim/.neoconf.json

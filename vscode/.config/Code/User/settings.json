@@ -1,0 +1,182 @@
+{
+    "window.titleBarStyle": "native",
+    "tabnine.experimentalAutoImports": true,
+    "redhat.telemetry.enabled": true,
+    "explorer.confirmDelete": false,
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDragAndDrop": false,
+
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml",
+    },
+
+    "[java]": {
+        "editor.defaultFormatter": "Oracle.oracle-java",
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features",
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": false,
+        "editor.formatOnType": false,
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+
+    "prettier.vueIndentScriptAndStyle": true,
+    "prettier.documentSelectors": ["**/*.html", "**/*.htm"],
+    "prettier.requireConfig": false,
+    "prettier.htmlWhitespaceSensitivity": "strict",
+    "prettier.bracketSameLine": false,
+    "prettier.tabWidth": 4,
+
+    "files.associations": {
+        "*.html": "html",
+    },
+
+    "workbench.iconTheme": "material-icon-theme",
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "lldb.suppressUpdateNotifications": true,
+    "debug.onTaskErrors": "abort",
+    "editor.mouseWheelZoom": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editor.empty.hint": "hidden",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "inlineChat.lineEmptyHint": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.jsx": "${capture}.js",
+        "*.tsx": "${capture}.ts",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+        "*.sqlite": "${capture}.${extname}-*",
+        "*.db": "${capture}.${extname}-*",
+        "*.sqlite3": "${capture}.${extname}-*",
+        "*.db3": "${capture}.${extname}-*",
+        "*.sdb": "${capture}.${extname}-*",
+        "*.s3db": "${capture}.${extname}-*",
+    },
+    "geminicodeassist.project": "nice-autumn-pxtqn",
+    "chat.mcp.gallery.enabled": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "geminicodeassist.inlineSuggestions.enableAuto": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "diffEditor.codeLens": true,
+    "gitlens.advanced.messages": {
+        "suppressFileNotUnderSourceControlWarning": true,
+    },
+    "markdown-preview-enhanced.previewTheme": "github-dark.css",
+    "remote.SSH.remotePlatform": {
+        "192.168.40.2": "linux",
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false,
+        "powershell": true,
+    },
+    "chat.tools.terminal.autoApprove": {
+        "Get-ComputerInfo": true,
+        "Get-WmiObject": true,
+        "/^powershell\\.exe -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\ikern\\\\OneDrive\\\\Desktop\\\\optimizar pc\\\\ULTIMATE_PRO_CLEAN\\.ps1\"$/": {
+            "approve": true,
+            "matchCommandLine": true,
+        },
+        "/^powershell\\.exe -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\ikern\\\\OneDrive\\\\Desktop\\\\optimizar pc\\\\CHECK_RUNNING_PROCESSES\\.ps1\"$/": {
+            "approve": true,
+            "matchCommandLine": true,
+        },
+        "/^powershell\\.exe -NoProfile -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\ikern\\\\OneDrive\\\\Desktop\\\\optimizar pc\\\\APPLY_CLEANUP\\.ps1\"$/": {
+            "approve": true,
+            "matchCommandLine": true,
+        },
+        "/^powershell\\.exe -NoProfile -ExecutionPolicy Bypass -Command \"\\$patterns = 'Code\\|XMouseButtonControl\\|opera\\|ISLC\\|OfficeClickToRun\\|logi_lamparray_service\\|Intelligent'; Get-Process \\| Where-Object \\{ \\$_\\.Name -match \\$patterns \\} \\| ForEach-Object \\{ Write-Host 'Stopping:' \\$_\\.Name \\$_\\.Id; Stop-Process -Id \\$_\\.Id -Force -ErrorAction SilentlyContinue \\} ; Write-Host 'Done stopping processes\\.'\"$/": {
+            "approve": true,
+            "matchCommandLine": true,
+        },
+    },
+    "chat.editing.confirmEditRequestRetry": "never",
+    "workbench.colorTheme": "Omarchy",
+    "editor.largeFileOptimizations": false,
+    "workbench.settings.applyToAllProfiles": [
+        "chat.tools.terminal.autoApprove",
+    ],
+    "jdk.telemetry.enabled": true,
+    "diffEditor.maxComputationTime": 0,
+    "chat.tools.urls.autoApprove": {
+        "https://code.visualstudio.com": true,
+        "https://github.com/microsoft/vscode/wiki/*": true,
+        "https://github.com/ful1e5/apple_cursor/releases/latest": true,
+        "https://github.com/ful1e5/apple_cursor/releases": true,
+        "https://github.com/ful1e5/apple_cursor": true,
+        "https://github.com/ful1e5": true,
+        "https://github.com": true,
+        "https://github.com/christitustech/winutil": true,
+        "https://github.com/christitustech": true,
+        "https://raw.githubusercontent.com/ful1e5/apple_cursor/main/README.md": true,
+        "https://raw.githubusercontent.com/ful1e5/apple_cursor/main": true,
+        "https://raw.githubusercontent.com/ful1e5/apple_cursor": true,
+        "https://raw.githubusercontent.com/ful1e5": true,
+        "https://raw.githubusercontent.com": true,
+        "https://*.githubusercontent.com": true,
+        "https://payatu.com/blog/damn-insecure-and-vulnerable-app-diva": {
+            "approveRequest": true,
+            "approveResponse": false,
+        },
+        "https://payatu.com": {
+            "approveRequest": false,
+            "approveResponse": true,
+        },
+    },
+    "workbench.browser.enableChatTools": true,
+    "mssql.connectionGroups": [
+        {
+            "name": "ROOT",
+            "id": "ROOT",
+        },
+    ],
+    "java.imports.gradle.wrapper.checksums": [
+        {
+            "sha256": "e2b82129ab64751fd40437007bd2f7f2afb3c6e41a9198e628650b22d5824a14",
+            "allowed": false,
+        },
+    ],
+    "kimi.enableNewConversationShortcut": true,
+    "kimi.showThinkingExpanded": true,
+    "kimi.useCtrlEnterToSend": true,
+    "kimi.yoloMode": true,
+    "mssql.autoDisableNonTSqlLanguageService": true,
+    "git.openRepositoryInParentFolders": "always",
+    "claudeCode.preferredLocation": "panel",
+    "explorer.confirmPasteNative": false,
+    "chatgpt.reviewDelivery": "inline",
+    "yaml.disableSchemaDetection": [
+        "**/.github/workflows/*.yml",
+        "**/.github/workflows/*.yaml",
+        "**/.gitea/workflows/*.yml",
+        "**/.gitea/workflows/*.yaml",
+        "**/.forgejo/workflows/*.yml",
+        "**/.forgejo/workflows/*.yaml",
+    ],
+    "powershell.promptToUpdatePowerShell": false,
+    "python.languageServer": "Default",
+}

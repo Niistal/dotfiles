@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "idle": {
+    "screensaver": 300,
+    "lock": 600
+  },
+  "bar": {
+    "position": "top",
+    "transparent": false,
+    "centerAnchor": "",
+    "layout": {
+      "left": [
+        {
+          "id": "omarchy.active-window"
+        },
+        {
+          "id": "admin.workspaces"
+        }
+      ],
+      "center": [
+        {
+          "id": "omarchy.indicators"
+        },
+        {
+          "id": "touchtype"
+        },
+        {
+          "id": "omaplug",
+          "autoCheckUpdates": true
+        },
+        {
+          "id": "jesseburlamaque.omarchy-find"
+        },
+        {
+          "id": "io.github.jburchel.jarvis"
+        }
+      ],
+      "right": [
+        {
+          "id": "niistal.search-button"
+        },
+        {
+          "id": "omarchy.tailscale"
+        },
+        {
+          "id": "omarchy.network"
+        },
+        {
+          "id": "omarchy.audio"
+        },
+        {
+          "id": "omarchy.power"
+        },
+        {
+          "id": "omarchy.clock",
+          "format": "ddd D MMM  HH:mm",
+          "formatAlt": "dddd D MMMM yyyy",
+          "verticalFormat": "HH\n—\nmm"
+        },
+        {
+          "id": "niistal.controlcenter-button"
+        },
+        {
+          "id": "akitaonrails.ai-usagebar",
+          "lastSelectedEntryId": "antigravity",
+          "showAll": true,
+          "showProvider": true
+        },
+        {
+          "id": "omaconnect"
+        },
+        {
+          "id": "io.github.steezy-code.mousemap"
+        }
+      ]
+    }
+  },
+  "plugins": [
+    {
+      "id": "bobbynicholas.omaland"
+    },
+    {
+      "id": "niistal.cupertino-controlcenter"
+    },
+    {
+      "id": "admin.lock"
+    }
+  ],
+  "disabledPlugins": [
+    "omarchy.lock"
+  ],
+  "cloneSourceRestores": [
+    "admin.lock"
+  ]
+}

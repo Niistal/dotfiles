@@ -1,0 +1,6 @@
+notebooklm-py v0.8.2
+- notebooklm
+- notebooklm-mcp
+- notebooklm-server
+orange3 v3.40.0
+- orange-canvas

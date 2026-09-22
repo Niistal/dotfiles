@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "niistal.cupertino-overview",
+  "name": "Cupertino Overview",
+  "version": "1.0.0",
+  "author": "Niistal",
+  "description": "macOS-style Mission Control and App Expose overview",
+  "kinds": ["overlay"],
+  "keepLoaded": true,
+  "entryPoints": {
+    "overlay": "Overview.qml"
+  }
+}

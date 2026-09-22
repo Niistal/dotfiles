@@ -1,0 +1,11 @@
+[Unit]
+Description=Dotfiles autosync cada hora
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=1h
+Persistent=true
+Unit=dotfiles-autosync.service
+
+[Install]
+WantedBy=timers.target

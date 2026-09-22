@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "niistal.cupertino-island",
+  "name": "Cupertino Dynamic Island",
+  "version": "1.0.0",
+  "author": "Niistal",
+  "description": "macOS-inspired Dynamic Island pill with spring animations",
+  "kinds": ["overlay"],
+  "keepLoaded": true,
+  "entryPoints": {
+    "overlay": "Island.qml"
+  }
+}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Dotfiles autosync (dump + commit + push)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+Environment=DOTFILES_DIR=%h/dotfiles
+ExecStart=%h/dotfiles/scripts/sync.sh
+StandardOutput=journal
+StandardError=journal
