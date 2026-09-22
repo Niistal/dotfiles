@@ -137,6 +137,7 @@ socat
 sof-firmware
 spotify
 starship
+stow
 sudo
 sushi
 system-config-printer

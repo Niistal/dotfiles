@@ -22,8 +22,18 @@ if command -v uv >/dev/null 2>&1; then
 fi
 
 # 2. Recopiar configs vivas -> árbol stow (sobrescribe repo con sistema)
+# Si el origen ya es un symlink al repo (máquina con stow aplicado),
+# no hay nada que recopiar: los cambios ya caen directo en el repo.
+in_repo() { # $1=ruta -> 0 si resuelve dentro de $DOT
+  local r
+  r="$(readlink -f "$1" 2>/dev/null)" || return 1
+  case "$r" in "$DOT"/*) return 0 ;; *) return 1 ;; esac
+}
 copy() { # $1=origen $2=destino
-  if [ -e "$1" ]; then mkdir -p "$(dirname "$2")"; cp -a "$1" "$2"; fi
+  if [ -e "$1" ] || [ -L "$1" ]; then
+    in_repo "$1" && return 0
+    mkdir -p "$(dirname "$2")"; cp -a "$1" "$2"
+  fi
 }
 copy "$HOME/.bashrc"              "$DOT/bash/.bashrc"
 copy "$HOME/.bash_profile"        "$DOT/bash/.bash_profile"
@@ -40,9 +50,10 @@ copy "$HOME/.config/opencode/opencode.json" "$DOT/opencode/.config/opencode/open
 # dirs completos (rsync si existe, si no cp)
 sync_dir() { # $1=origen $2=destino
   [ -d "$1" ] || return 0
+  in_repo "$1" && return 0
   mkdir -p "$2"
   if command -v rsync >/dev/null 2>&1; then
-    rsync -a --delete --exclude '*.bak.*' --exclude '*.bak' --exclude '.omaplug-menu.lock' "$1/" "$2/"
+    rsync -aL --exclude '*.bak.*' --exclude '*.bak' --exclude '.omaplug-menu.lock' "$1/" "$2/"
   else
     cp -a "$1/." "$2/"
   fi
@@ -61,14 +72,17 @@ for f in shell.json shell.toml mousemap.json; do
   copy "$HOME/.config/omarchy/$f" "$DOT/omarchy/.config/omarchy/$f"
 done
 sync_dir "$HOME/.config/omarchy/extensions" "$DOT/omarchy/.config/omarchy/extensions"
-rm -rf "$DOT/omarchy/.config/omarchy/plugins"
+# NOTA: no borrar el dir antes del rsync. Con stow aplicado, los ficheros
+# vivos son symlinks a este mismo dir; un rm -rf dejaría los links colgando
+# y el rsync fallaría. Sin --delete, los plugins eliminados en vivo quedan
+# como ficheros huérfanos visibles en `git status` para poda manual.
 mkdir -p "$DOT/omarchy/.config/omarchy/plugins"
 for d in "$HOME"/.config/omarchy/plugins/niistal.* "$HOME"/.config/omarchy/plugins/admin.*; do
   [ -e "$d" ] || continue
   base="$(basename "$d")"
   mkdir -p "$DOT/omarchy/.config/omarchy/plugins/$base"
   if command -v rsync >/dev/null 2>&1; then
-    rsync -a --delete --exclude '*.bak.*' "$d/" "$DOT/omarchy/.config/omarchy/plugins/$base/"
+    rsync -aL --exclude '*.bak.*' "$d/" "$DOT/omarchy/.config/omarchy/plugins/$base/"
   else
     cp -a "$d/." "$DOT/omarchy/.config/omarchy/plugins/$base/"
   fi
