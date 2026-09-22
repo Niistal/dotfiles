@@ -21,3 +21,6 @@ export PATH="/home/admin/.local/bin:$PATH"
 
 # opencode
 export PATH=/home/admin/.opencode/bin:$PATH
+
+# dotfiles sync manual
+alias dotfiles-sync="$HOME/dotfiles/scripts/sync.sh"
