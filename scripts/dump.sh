@@ -49,6 +49,10 @@ sync_dir() { # $1=origen $2=destino
 }
 sync_dir "$HOME/.config/hypr" "$DOT/hypr/.config/hypr"
 sync_dir "$HOME/.config/nvim" "$DOT/nvim/.config/nvim"
+# theme.lua de nvim es un symlink dinámico de Omarchy (-> ~/.local/state/...)
+# que cuelga fuera del repo: no versionarlo ni dejar que stow lo toque
+# (ver nvim/.stow-local-ignore)
+rm -f "$DOT/nvim/.config/nvim/lua/plugins/theme.lua"
 sync_dir "$HOME/.config/fish/conf.d" "$DOT/fish/.config/fish/conf.d"
 
 # omarchy: solo ficheros core + extensiones + plugins propios (niistal.* / admin.*)

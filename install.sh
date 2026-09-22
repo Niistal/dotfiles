@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Instalador dotfiles (Omarchy/Arch) con GNU Stow
-# Uso: git clone <repo> ~/dotfiles && ~/dotfiles/install.sh
+# Uso: git clone https://github.com/Niistal/dotfiles.git ~/dotfiles && ~/dotfiles/install.sh
 set -euo pipefail
 DOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$DOT"
@@ -15,9 +15,23 @@ if ! command -v yay >/dev/null 2>&1; then
   rm -rf "$tmp"
 fi
 
-echo "==> [2/6] Paquetes pacman explícitos"
+echo "==> [2/6] Paquetes de repos oficiales"
 if [ -f packages/pkglist-explicit.txt ]; then
-  sudo pacman -S --needed - < packages/pkglist-explicit.txt || echo "WARN: algún paquete pacman falló, sigue..."
+  # pkglist-explicit incluye paquetes AUR/extranjeros; pacman solo acepta los de repos.
+  # Se filtra restando la lista AUR (si yay/pacman -Qqm disponible) y comprobando con pacman -Si.
+  tmp_repo="$(mktemp)"
+  if [ -s packages/pkglist-aur.txt ]; then
+    comm -23 <(sort -u packages/pkglist-explicit.txt) <(sort -u packages/pkglist-aur.txt) > "$tmp_repo"
+  else
+    cp packages/pkglist-explicit.txt "$tmp_repo"
+  fi
+  tmp_ok="$(mktemp)"
+  while read -r pkg; do
+    [ -n "$pkg" ] || continue
+    if pacman -Si "$pkg" >/dev/null 2>&1; then echo "$pkg" >> "$tmp_ok"; else echo "skip (no está en repos, lo cubre el paso AUR): $pkg"; fi
+  done < "$tmp_repo"
+  sudo pacman -S --needed - < "$tmp_ok" || echo "WARN: algún paquete pacman falló, sigue..."
+  rm -f "$tmp_repo" "$tmp_ok"
 fi
 
 echo "==> [3/6] Paquetes AUR"
@@ -35,8 +49,13 @@ if command -v mise >/dev/null 2>&1; then
 fi
 
 echo "==> [5/6] Stow (symlinks a \$HOME)"
-# stow crea symlinks; --restow para re-ejecutar sin errores
-stow --restow bash git starship ghostty hypr nvim omarchy mise tmux fish opencode vscode
+# --adopt: en la máquina origen los ficheros ya existen como reales; adopt los
+# mueve al repo y deja symlinks. En máquina nueva no hay conflicto y es no-op.
+# --restow permite re-ejecutar sin errores.
+stow --adopt --restow bash git starship ghostty hypr nvim omarchy mise tmux fish opencode vscode
+# --adopt puede haber movido cambios vivos al repo: se descartan si son
+# idénticos en contenido real (solo cambia modo), o se commitean vía sync.
+git diff --quiet || { echo "stow adoptó cambios vivos, revísalos con: git -C $DOT status"; }
 
 echo "==> [6/6] Extensiones VSCode + autosync"
 if [ -f packages/vscode-extensions.txt ] && command -v code >/dev/null 2>&1; then
