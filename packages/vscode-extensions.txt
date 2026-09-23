@@ -94,6 +94,7 @@ nico-castell.linux-desktop-file
 njpwerner.autodocstring
 oderwat.indent-rainbow
 openai.chatgpt
+openai.codex-audio
 oracle.oracle-java
 pablodelucca.pixel-agents
 pkief.material-icon-theme
