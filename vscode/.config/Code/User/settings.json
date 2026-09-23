@@ -186,6 +186,15 @@
     "python.autoComplete.extraPaths": [
         "/home/admin/.local/lib/python3.14/site-packages",
     ],
-    "flake8.args": ["--max-line-length=88", "--extend-ignore=E501,E402"],
+    "flake8.args": [
+        "--max-line-length=88",
+        "--extend-ignore=E501,E402",
+        "--extend-exclude=*.pyi,.vscode"
+    ],
+    "flake8.ignorePatterns": [
+        "**/*.pyi",
+        "**/.vscode/**",
+        "**/site-packages/**"
+    ],
     "basedpyright.analysis.typeCheckingMode": "standard",
 }
