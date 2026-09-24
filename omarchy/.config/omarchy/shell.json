@@ -6,7 +6,7 @@
   },
   "bar": {
     "position": "top",
-    "transparent": false,
+    "transparent": true,
     "centerAnchor": "",
     "layout": {
       "left": [
@@ -62,7 +62,7 @@
         },
         {
           "id": "akitaonrails.ai-usagebar",
-          "lastSelectedEntryId": "openai",
+          "lastSelectedEntryId": "copilot",
           "showAll": true,
           "showProvider": true
         },
