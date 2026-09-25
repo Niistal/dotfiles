@@ -23,5 +23,3 @@ o.bind("XF86ScreenSaver", "Lock system", "omarchy-system-lock", { locked = true 
 -- by the panel and is safe to delete.
 pcall(dofile, os.getenv("HOME") .. "/.local/state/omarchy-mousemap/bindings.lua")
 -- END mousemap
-
-hl.bind("CTRL + SHIFT + 2", hl.dsp.global("com.t3tools.T3Code:capture-window"))
