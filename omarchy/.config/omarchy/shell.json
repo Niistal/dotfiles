@@ -58,9 +58,6 @@
           "verticalFormat": "HH\n—\nmm"
         },
         {
-          "id": "niistal.controlcenter-button"
-        },
-        {
           "id": "akitaonrails.ai-usagebar",
           "lastSelectedEntryId": "copilot",
           "showAll": true,
@@ -78,9 +75,6 @@
   "plugins": [
     {
       "id": "bobbynicholas.omaland"
-    },
-    {
-      "id": "niistal.cupertino-controlcenter"
     },
     {
       "id": "admin.lock"
