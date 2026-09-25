@@ -186,12 +186,14 @@
     "python.autoComplete.extraPaths": [
         "/home/admin/.local/lib/python3.14/site-packages",
     ],
+    "flake8.enabled": false,
     "flake8.args": [
         "--max-line-length=88",
-        "--extend-ignore=E501,E402",
-        "--extend-exclude=*.pyi,.vscode"
+        "--extend-ignore=E501,E402,E111,E114,E231,E261,E265,E741,E302,E305",
+        "--extend-exclude=*.pyi,.vscode,*.ipynb"
     ],
     "flake8.ignorePatterns": [
+        "**/*.ipynb",
         "**/*.pyi",
         "**/.vscode/**",
         "**/site-packages/**"
