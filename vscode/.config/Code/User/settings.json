@@ -120,7 +120,6 @@
     "workbench.settings.applyToAllProfiles": [
         "chat.tools.terminal.autoApprove",
     ],
-    "jdk.telemetry.enabled": true,
     "diffEditor.maxComputationTime": 0,
     "chat.tools.urls.autoApprove": {
         "https://code.visualstudio.com": true,
@@ -201,4 +200,6 @@
     "basedpyright.analysis.typeCheckingMode": "standard",
     "editor.unicodeHighlight.invisibleCharacters": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
+    "jdk.telemetry.enabled": true,
+    "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
 }
