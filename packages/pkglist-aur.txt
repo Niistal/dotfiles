@@ -1,2 +1,1 @@
 ai-usagebar-bin
-zen-browser-bin
