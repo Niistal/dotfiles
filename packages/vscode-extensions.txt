@@ -1,6 +1,5 @@
 academiadosdevs.javafx
 adelphes.android-dev-ext
-alexandersklarmsft.midl3-language-server
 alexcvzz.vscode-sqlite
 anthropic.claude-code
 asurance.binary-preview
@@ -45,7 +44,6 @@ jithurjacob.nbpreviewer
 jock.svg
 kevinrose.vsc-python-indent
 kingleo.kimi-vscode
-lintangwisesa.arduino
 local.omarchy-theme
 madhavd1.javadoc-tools
 mathiasfrohlich.kotlin
@@ -54,7 +52,6 @@ meezilla.json
 mgesbert.python-path
 mohsen1.prettify-json
 moonshot-ai.kimi-code
-moozzyk.arduino
 ms-azuretools.vscode-containers
 ms-azuretools.vscode-docker
 ms-ceintl.vscode-language-pack-es
