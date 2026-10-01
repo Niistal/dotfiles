@@ -113,6 +113,7 @@ omarchy-settings
 omawrite
 openai-codex-desktop
 openbsd-netcat
+openrgb
 pacman-contrib
 pamixer
 pinta
