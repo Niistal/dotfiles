@@ -85,7 +85,7 @@
     },
     "markdown-preview-enhanced.previewTheme": "github-dark.css",
     "remote.SSH.remotePlatform": {
-        "192.168.40.2": "linux",
+        "127.0.0.1": "linux",
     },
     "github.copilot.enable": {
         "*": true,
@@ -180,10 +180,10 @@
     "python.languageServer": "Default",
     "python.defaultInterpreterPath": "/usr/bin/python",
     "python.analysis.extraPaths": [
-        "/home/admin/.local/lib/python3.14/site-packages",
+        "/home/user/.local/lib/python3.14/site-packages",
     ],
     "python.autoComplete.extraPaths": [
-        "/home/admin/.local/lib/python3.14/site-packages",
+        "/home/user/.local/lib/python3.14/site-packages",
     ],
     "flake8.enabled": false,
     "flake8.args": [

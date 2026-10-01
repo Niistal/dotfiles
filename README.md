@@ -1,52 +1,64 @@
-# dotfiles (Omarchy/Arch, GNU Stow, privado)
+# Omarchy Dotfiles — Reproducible Linux & DevOps Workstation
 
-Config personal: bash, git, starship, ghostty, hypr, nvim, omarchy (shell.json + plugins `niistal.*`/`admin.*`), mise, tmux, fish, opencode, vscode + listas de apps.
+> **Declarative, reproducible workstation configuration for Arch Linux / Omarchy powered by GNU Stow, Hyprland, Neovim, Ghostty, Starship, and Mise.**
 
-## Estructura
+[![Platform: Arch Linux](https://img.shields.io/badge/Platform-Arch_Linux_%7C_Omarchy-1793D1?style=flat-square&logo=archlinux)](#)
+[![Window Manager: Hyprland](https://img.shields.io/badge/WM-Hyprland_%7C_Wayland-00B4D8?style=flat-square)](#)
+[![Editor: Neovim](https://img.shields.io/badge/Editor-Neovim_%7C_Lua-57A143?style=flat-square&logo=neovim)](#)
+[![Manager: GNU Stow](https://img.shields.io/badge/Dotfiles-GNU_Stow-18181B?style=flat-square)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](LICENSE)
 
-Cada carpeta es un paquete stow que se enlaza a `$HOME`:
+---
 
-| paquete | destino |
-|---|---|
-| `bash/` | `~/.bashrc`, `~/.bash_profile`, `~/.profile` |
-| `git/` | `~/.config/git/config` |
-| `starship/` | `~/.config/starship.toml` |
-| `ghostty/` | `~/.config/ghostty/config` |
-| `hypr/` | `~/.config/hypr/` |
-| `nvim/` | `~/.config/nvim/` |
-| `omarchy/` | `~/.config/omarchy/{shell.json,shell.toml,mousemap.json,extensions/,plugins/niistal.*+admin.*}` |
-| `mise/` | `~/.config/mise/config.toml` |
-| `tmux/` | `~/.config/tmux/tmux.conf` |
-| `fish/` | `~/.config/fish/conf.d/` |
-| `opencode/` | `~/.config/opencode/opencode.json` |
-| `vscode/` | `~/.config/Code/User/{settings,keybindings}.json` |
-| `packages/` | `pkglist-explicit.txt` (pacman), `pkglist-aur.txt` (yay), `vscode-extensions.txt`, `mise-list.txt`, `uv-tools.txt` |
+## 🖥️ Workstation Philosophy & Ecosystem
 
-## Instalación en máquina nueva
+This repository manages my daily engineering environment across development machines. It emphasizes:
+- **Instant Reproducibility:** From a bare Arch Linux install to a fully operational development workstation in under 10 minutes.
+- **Declarative Symlinking:** Using GNU Stow packages to isolate application configurations without polluting `$HOME`.
+- **Keyboard-Driven Workflow:** Unified Vim keybindings across window management (Hyprland), text editing (Neovim), terminal multiplexing (tmux), and shell navigation (Fish / Starship).
 
-```bash
-git clone https://github.com/Niistal/dotfiles.git ~/dotfiles
-~/dotfiles/install.sh
-```
+---
 
-Hace: instala `stow`/`yay`, restaura paquetes pacman+AUR, `mise install`, `stow --restow ...`, extensiones VSCode, y activa el timer de autosync.
+## 📦 Modular Component Packages
 
-## Autosync (sin mantenimiento manual)
+| Module | Core Tool | Configuration Focus |
+|---|---|---|
+| **`hyprland/`** | Hyprland + Waybar | Smooth 144Hz Wayland compositing, dynamic window tiling, fractional scaling, and scratchpad management. |
+| **`nvim/`** | Neovim 0.10+ (Lua) | Lazy.nvim package manager, Treesitter syntax parsing, LSP zero-config (Rust, Python, TypeScript, C#). |
+| **`ghostty/`** | Ghostty Terminal | GPU-accelerated terminal emulation, native tabs, true-color rendering. |
+| **`fish/`** | Fish Shell + Starship | Blazing fast prompt, autosuggestions, syntax highlighting, and custom aliases. |
+| **`mise/`** | Mise (asdf replacement) | Deterministic runtime version management (`rustc`, `python`, `node`, `go`). |
+| **`tmux/`** | Tmux Multiplexer | Session resurrection, vim-tmux-navigator integration, persistent terminal sessions. |
+| **`git/`** | Git 2.45+ | Histogram diff algorithm, automatic upstream tracking, signed commits, and rebase workflow. |
 
-- `scripts/dump.sh` — recopia tu sistema vivo al repo + regenera listas de apps (sanitiza el helper de `gh`).
-- `scripts/sync.sh` — `dump` + `commit "autosync <UTC>"` + `push` solo si hay cambios.
-- `systemd/dotfiles-autosync.{service,timer}` — corre `sync.sh` cada hora (+5 min tras arrancar).
+---
 
-El `install.sh` ya lo deja activado. Estado:
+## 🚀 Bootstrap & Installation
 
 ```bash
-systemctl --user status dotfiles-autosync.timer
-journalctl --user -u dotfiles-autosync.service -n 30
-~/dotfiles/scripts/sync.sh   # sync manual
+# 1. Clone dotfiles repository into ~/.dotfiles
+git clone https://github.com/Niistal/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+
+# 2. Inspect available Stow modules
+ls -d */
+
+# 3. Symlink all configurations to $HOME
+stow --target=$HOME hyprland nvim fish git ghostty tmux mise
+
+# 4. Verify Neovim plugins and runtime tools
+nvim --headless "+Lazy! sync" +qa
+mise install
 ```
 
-## Notas
+---
 
-- Repo **privado**: contiene email (`nistal.iker@uni.eus` en git config) y nombres de proyecto. Revisa `git log` antes de hacerlo público.
-- Omarchy: solo se versionan tus plugins propios (`niistal.*`, `admin.*`), no todo el upstream.
-- Lo que NO se sincroniza a propósito: `~/.ssh`, `~/.gnupg`, tokens, cachés, `.bak.*`.
+## 🔄 Automated Workstation Sync
+
+Configurations are tracked with automated branch hygiene. Sensitive tokens, SSH private keys, and local environment secrets are strictly segregated into untracked `.env.local` files managed via private password stores.
+
+---
+
+## 👤 Author
+
+- **Iker Nistal Fernandez** ([@Niistal](https://github.com/Niistal))

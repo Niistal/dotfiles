@@ -17,10 +17,10 @@ source "$OMARCHY_PATH/default/bash/rc"
 
 
 # Added by Antigravity CLI installer
-export PATH="/home/admin/.local/bin:$PATH"
+export PATH="/home/user/.local/bin:$PATH"
 
 # opencode
-export PATH=/home/admin/.opencode/bin:$PATH
+export PATH=/home/user/.opencode/bin:$PATH
 
 # dotfiles sync manual
 alias dotfiles-sync="$HOME/dotfiles/scripts/sync.sh"

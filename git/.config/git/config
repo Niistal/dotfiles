@@ -27,8 +27,8 @@
 	enabled = true           # Record and reuse conflict resolutions
 	autoupdate = true        # Apply stored conflict resolutions automatically
 [user]
-	name = admin
-	email = nistal.iker@uni.eus
+	name = Niistal
+	email = ikernistal77@gmail.com
 [credential "https://github.com"]
 	helper = 
 	helper = !gh auth git-credential
